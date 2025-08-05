@@ -1,7 +1,6 @@
-# W25Q128 Flash Memory Arduino Library
+# W25Q128x SPI Flash Arduino Library
 
-A lightweight Arduino library for interfacing with Winbond W25Q128 (and similar W25Q series) SPI flash memory chips.  
-Provides low-level access for reading, writing, erasing, and managing power modes.
+An Arduino library for interfacing with the W25Q128x SPI flash memory chip from Winbond. The library provides low-level access for reading, writing, erasing, and managing power modes.
 
 ## Features
 
@@ -26,7 +25,7 @@ W25Q128 flash;
 
 void setup() {
   Serial.begin(115200);
-  flash.begin(10); // CS pin is pin 10 in this example
+  flash.begin(cs_pin);
 }
 ```
 
@@ -141,6 +140,3 @@ No parameters.
 - Erase commands affect **entire sectors or blocks** — partial erasing is not possible.
 - Writes must occur on erased memory (0xFF-filled bytes).
 - Page writes wrap automatically at 256-byte boundaries.
-
-## License
-MIT License
